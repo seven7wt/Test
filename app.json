@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "dokku": {
+      "predeploy": "./node_modules/.bin/webpack"
+    }
+  }
+}

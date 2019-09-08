@@ -1,0 +1,23 @@
+{% extends 'karaoke/base.html' %}
+
+{% block content %}
+   <div id="wrapper">
+        <div>
+            <header>
+                <div>
+                    <a href="/"><h1>Ponytone</h1></a>
+                </div>
+                <nav>
+                    <a href="/faq">FAQ</a>
+                    <a href="/credits">Credits</a>
+                    <a href="https://twitter.com/PonytoneGame">Twitter</a>
+                </nav>
+            </header>
+        </div>
+        <div id="subwrapper">
+            {% block blurb %}
+
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

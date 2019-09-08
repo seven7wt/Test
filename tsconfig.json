@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "sourceMap": true,
+    "lib": ["dom", "es6", "dom.iterable", "scripthost", "es2017.object"],
+    "noImplicitAny": true
+  },
+  "include": [
+    "./assets/js/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

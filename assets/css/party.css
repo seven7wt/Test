@@ -1,0 +1,397 @@
+@import "base.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Ubuntu, sans-serif;
+    background-color: rgb(168, 217, 241);
+}
+
+input, button {
+    font-family: Ubuntu, sans-serif;
+}
+
+body, html {
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'Slackey', sans-serif;
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 35px;
+    margin: 0;
+}
+
+button {
+    background-color: white;
+    border: 1px solid rgb(98, 140, 255);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+button:active {
+    background-color: rgb(230, 230, 230);
+}
+
+#not-game-container {
+    width: 100%;
+    height: 100vh;
+}
+
+#ready-container {
+    float: left;
+    clear: left;
+    width: calc(70% - 10px);
+    height: calc(10% - 10px);
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-family: 'Slackey', sans-serif;
+}
+
+#ready-container button {
+    width: 100%;
+    height: 100%;
+    float: left;
+    font-size: 35px;
+    font-family: 'Slackey', sans-serif;
+}
+
+#ready-container .duet-container {
+    width: 50%;
+    float: right;
+    height: 100%;
+    display: none;
+    font-size: 20px;
+}
+
+.duet-label {
+    height: 40%;
+}
+
+#ready-container .duet-container select {
+    width: 100%;
+    height: 60%;
+    font-size: 20px;
+}
+
+.duet-container select.part0,
+.duet-container select > option:nth-child(1) {
+    color: #4287f4;
+}
+
+.duet-container select.part1,
+.duet-container select > option:nth-child(2) {
+    color: #d70000;
+}
+
+#ready-container.duet .duet-container {
+    display: block;
+}
+
+#ready-container.duet button {
+    width: 50%;
+}
+
+#queue-container {
+    float: left;
+    clear: left;
+    height: calc(40% - 10px);
+    margin-top: 10px;
+    width: 70%;
+    position: relative;
+}
+
+#track-list-container {
+    float: right;
+    width: 30%;
+    height: 100%;
+    position: relative;
+}
+
+.song-list {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 30px);
+    overflow-y: auto;
+}
+
+.song-list > ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.song-list li {
+    clear: both;
+    height: 55px;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+.song-list li * {
+    pointer-events: none;
+}
+
+.song-list img {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(98, 140, 255);
+    border-radius: 3px;
+}
+
+.song-list .song-title {
+    position: absolute;
+    top: 5px;
+    left: 60px;
+}
+
+.song-list .song-artist {
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.song-title, .song-artist {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: calc(100% - 110px);
+}
+
+.song-list .duration {
+    position: absolute;
+    right: 5px;
+    top: 20px;
+}
+
+.song-list li:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.song-filters {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    padding-top: 5px;
+    padding-left: 2px;
+}
+
+.song-search {
+    width: calc(100% - 3px);
+    font-size: 16px;
+    height: 23px;
+}
+
+#party-container {
+    width: calc(70% - 10px);
+    height: calc(50% - 10px);
+    margin-left: 5px;
+    margin-top: 5px;
+    float: left;
+    display: flex;
+    border: 1px solid rgb(98, 140, 255);
+    border-radius: 3px;
+    font-family: 'Slackey', cursive;
+}
+
+#party-container .name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#party-container .score {
+    font-size: 40px;
+}
+
+#party-container > div {
+    min-width: 33%;
+    flex: 1;
+    overflow: hidden;
+}
+
+#party-container > div:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#party-container .ready {
+    color: #157b15;
+}
+
+#party-container .connecting {
+    color: #c38138;
+}
+
+.middle {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+}
+
+.modal-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    font-size: 30px;
+    background-color: inherit;
+}
+
+.modal-text > div.container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#nick-container input[type=text] {
+    font-size: 40px;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;/**/
+    border-radius: 3px;
+    border: 1px solid rgb(98, 140, 255);
+}
+
+#nick-container button {
+    font-size: 40px;
+}
+
+#queue-container h2 {
+    text-align: center;
+    font-family: 'Slackey', sans-serif;
+}
+
+#queue-scroll {
+    position: absolute;
+    top: 45px;
+    overflow: auto;
+    width: calc(100% - 10px);
+    border: 1px solid rgb(98, 140, 255);
+    height: calc(100% - 55px);
+    border-radius: 3px;
+    margin: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/*.song-list {*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+    /*list-style: none;*/
+    /*width: 100%;*/
+/*}*/
+
+#queue-container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#queue-container li {
+    clear: both;
+    height: 110px;
+    position: relative;
+    width: 100%;
+}
+
+#queue-container img {
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(98, 140, 255);
+    border-radius: 3px;
+}
+
+#queue-container .song-title {
+    position: absolute;
+    top: 15px;
+    left: 120px;
+    font-size: 30px;
+}
+
+#queue-container .song-artist {
+    position: absolute;
+    top: 60px;
+    left: 120px;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#queue-container .song-title, #queue-container .song-artist {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: calc(100% - 230px);
+}
+
+#queue-container .duration {
+    position: absolute;
+    right: 15px;
+    top: 37px;
+    font-size: 30px;
+}
+
+#queue-container li:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.track-queue-empty {
+    font-size: 40px;
+    text-align: center;
+    line-height: 110px;
+    opacity: 0.6;
+    font-family: 'Slackey', sans-serif;
+}
+
+#loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    font-size: 20px;
+}
+
+#loading > div {
+    width: 512px;
+    height: 512px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: url("../img/loading.png") no-repeat transparent;
+}
+
+#chromia {
+    display: inline-block;
+    padding-right: 25px;
+    background: url("../img/chromia.png") no-repeat transparent;
+    width: 240px;
+    height:  240px;
+}
